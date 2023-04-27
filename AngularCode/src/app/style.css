@@ -1,0 +1,45 @@
+body{
+    background-color:bisque;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.caluclator{
+    background-color:darkslategray;
+    padding: 30px;
+    border-radius: 10px;
+}
+.caluclator form input{
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow:-5px -10px 15px palevioletred , 5px 10px 15px white ;
+    background: transparent;
+    font-size: 20px;
+    color: bisque;
+    cursor: pointer;
+    margin: 10px;
+}
+form .display{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0px;
+}
+form .display input{
+    text-align: right;
+    flex: 1;
+    font-size: 40px;
+    box-shadow: none;
+}
+form input.equal{
+    width: 140px;
+}
+form input.operator{
+    color:cornflowerblue;
+}

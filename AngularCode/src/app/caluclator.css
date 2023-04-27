@@ -1,0 +1,21 @@
+body{
+    background-color: aqua;
+}
+form .value input{
+    box-shadow: -5px -10px pink,5px 10px black;
+    padding: 10px;
+    
+}
+.container{
+    align-content: center;
+    align-items: center;
+    color: cadetblue;
+}
+.textbox{
+    align-items: flex-end;
+    align-content: right;text-align: right;
+}
+form input.value{
+    height: 60px;
+    width: 60px;
+}

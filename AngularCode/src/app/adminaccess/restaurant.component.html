@@ -1,0 +1,57 @@
+<a routerLink="/admin" role="button" class="btn btn-success">back</a>
+<div class="container">
+    <form #value="ngForm" (ngSubmit)="search(value.value)">
+        <div class="search">
+            <!-- <button class="fa fa-refresh"(click)="reload()"></button> -->
+        <input type="text" placeholder="Search by foodname" ngModel name="search" #name="ngModel">
+        <button type="submit" class="fas fa-search search-icon" style="height: 21px;"></button></div>
+        
+    </form>
+    <table class="table table-bordered table-stripped table-hover" border="3" cellpadding="2" width="30%">
+        <thead class="bg-secondary" align="center">
+            <tr>
+                <th>FOOD ID</th>
+                <th>FOODNAME</th>
+                <th>FOOD IMG</th>
+                <th>FOOD PRICE </th>
+                <th>FOOD DESC </th>
+                <th>FOODCATEGORY ID</th>  
+                <th>ACTION</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let f of foodList" align="center">
+            <tr>
+                <td>{{f.f_id}}</td>
+                <td>{{f.f_name}}</td>
+                <td><img style="width: 100px; height:100px;" img src="{{f.f_img}}"></td>
+                <td>{{f.f_price}}</td>
+                <td>{{f.f_desc}}</td>
+                <td>{{f.fc_id}}</td>
+                <td>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#mymodal"(click)="update(f)">Update</button>
+                    <button (click)="delete(f.f_id)" class="btn btn-danger">Delete</button>
+
+                </td>
+            </tr> 
+        </tbody>
+    </table>
+</div>
+
+<div class="modal" id="mymodal" role="dialog">
+    <div class="modal-content" style="width:25%;">
+        <div class="container">
+            <div>
+                <form #add="ngForm" (ngSubmit)="editFood(add.value)">
+                    Food Id: <input type="hidden" ngModel name="f_id" [(ngModel)]=" food.f_id"><br>
+                    Food Name: <input ngModel name="f_name" [(ngModel)]=" food.f_name"><br>
+                    Food Img: <input ngModel name="f_img" [(ngModel)]=" food.f_img"><br>
+                    Food Price: <input ngModel name="f_price" [(ngModel)]=" food.f_price"><br>
+                    Food Description: <input ngModel name="f_desc" [(ngModel)]=" food.f_desc"><br>
+                    Food Category Id: <input ngModel name="fc_id" [(ngModel)]=" food.fc_id"><br>
+                    <button>update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

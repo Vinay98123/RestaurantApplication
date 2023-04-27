@@ -1,0 +1,37 @@
+   <!-- <form #loginForm ="ngForm" (ngSubmit)="login(loginForm.value)">
+    <h2>LOGIN FORM </h2><br>
+    <div *ngIf="un.errors?.['required'] && un.touched">Please Enter Username</div>
+    <div *ngIf="un.errors?.['minlength'] && un.touched">Please Enter Atleast 10 values</div>
+  USERNAME:<input type="text" ngModel name="un" #un="ngModel" required minlength="`10" maxlength="20"><br><br>
+
+  <div *ngIf="pwd.errors?.['required'] && pwd.touched">Please Enter password(uc,lc,s)</div>
+    <div *ngIf="pwd.errors?.['minlength'] && pwd.touched">Please Enter Atleast 7 characters </div>
+ PASSWORD:<input type="password" ngModel name="pwd" #pwd="ngModel" required minlength="7" maxlength="10"><br><br>
+
+  <input type="submit" value="Login"> <br><br>
+  <h6>Don't have an account plz register now</h6> 
+  <div><a routerLink="/reg">Resister Now</a></div>
+</form>
+ -->
+
+ <div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" nonvalidate>
+      <h2 align="center">LOGIN FORM </h2><br><br>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" ngModel name="un" placeholder="name@example.com">
+        
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" ngModel name="pwd" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div><br><br>
+      <div>
+        <button type="submit" class="btn btn-outline-primary">SignIn</button>
+        <button type="SignUp" [routerLink]="'reg'" class="btn btn-outline-dark">SignUp</button>
+      </div>
+    </form>
+  </div>
+  <div >
+    <img [src]="myimage" alt="img not found" width="100%" height="760px">
+  </div>

@@ -1,0 +1,23 @@
+div{
+    text-align:center;
+    /* margin: 0;
+    padding:20px; */
+    /* height: 300px;
+    width: 500px; */
+    position: absolute;
+    top: 30%;
+    left:25%;
+  align-items: center;
+  background-color: darkgray;
+    color:darkred;
+    /* border-style: double; */
+   font-weight: bold;
+}
+h1{
+    background-color: aliceblue;
+    color: darkgoldenrod;
+}
+button{
+    height: 30px;
+    width: 100px;
+}

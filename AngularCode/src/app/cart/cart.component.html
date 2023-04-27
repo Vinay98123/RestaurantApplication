@@ -1,0 +1,64 @@
+<body style="background-color: rgba(95, 158, 160, 0.505);">
+<button  routerLink="/user"class="fa fa-arrow-left">Back</button>
+<ng-container *ngIf="orders.length !=0">
+    <div class="container">
+<div class="card-table">
+    <div class="cart-product" style="background-color:honeydew;">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Food Name</th>
+                    <th>Food Image</th>
+                    <th>Food price</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of orders;let i= index">
+                <td>{{i+1}}</td>
+                <td>{{item.f_name}}</td>
+                <td><img style="width: 120px;" src="{{item.f_img}}" ></td>
+                <td style="width:12%">{{item.f_price}}</td>
+                <td style="width:25%">{{item.f_desc}}</td>
+                <td><input type="number" [(ngModel)]="item.quantity"></td>
+                <td style="width:12%"> {{item.f_price | total: item.quantity|currency:'INR'}}</td>
+                <td>
+               <button (click)="qtyupdate(item)" class="btn btn-warning"><i class="fa fa-refresh"></i></button> 
+                  <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+
+                </td>   
+</tr>
+<tr>
+    <td colspan="4" ></td>
+    <td><button routerLink="/user"class="btn btn-info">Order More</button></td>
+    <td><button routerLink="/checkout"class="btn btn-primary">Check Out</button></td>
+    <td><strong >Grand Total :{{grandTotal | currency:'INR'}}</strong></td>
+
+
+</tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="orders.length==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://www.graphicsprings.com/filestorage/stencils/3055581cff0526602142cbb0bfba9fca.png?width=500&height=500" alt="">
+            <h3>Your cart is empty!</h3>
+            <h6>Add item to it now</h6>
+            <button routerLink="/user" class="btn btn-info">Shop Now</button>
+        </div>
+         
+    </div>
+</ng-container>
+</body>

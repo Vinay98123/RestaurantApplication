@@ -1,0 +1,24 @@
+form{
+    text-align:center;
+    margin: 0;
+    padding:20px;
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    top: 30%;
+    left:35%;
+  align-items: center;
+  background-color: rgba(169, 169, 169, 0.584);
+    color:darkred;
+    border-style: double;
+   font-weight: bold;
+}
+a{
+    color: blue;
+}
+h6{
+    color: darkmagenta;
+}
+div{
+    text-align: center;
+}

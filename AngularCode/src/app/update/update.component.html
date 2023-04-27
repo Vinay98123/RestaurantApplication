@@ -1,0 +1,30 @@
+<!-- <div class="container">
+    <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" novalidate>
+
+        <div *ngIf="f_id.errors?.['required'] && f_id.touched">Please Enter Food Id</div>
+        <div *ngIf="f_id.errors?.['minlength'] && f_id.touched">Please Enter Atleast 2 values</div>
+      Food Id:<input type="text" ngModel name="f_id" #f_id="ngModel" required minlength="2" maxlength="20"><br><br>
+
+        <div *ngIf="f_name.errors?.['required'] && f_name.touched">Please Enter Food Name</div>
+        <div *ngIf="f_name.errors?.['minlength'] && f_name.touched">Please Enter Atleast 20 characters</div>
+      Food Name:<input type="text" ngModel name="f_name" #f_name="ngModel" required minlength="5" maxlength="30"><br><br>
+         
+      <div *ngIf="f_img.errors?.['required'] && f_img.touched">Please Enter picture</div>
+      <div *ngIf="f_img.errors?.['minlength'] && f_img.touched">Please Enter Atleast 50 images</div>
+    Food Picture:<input type="text" ngModel name="f_img" #f_img="ngModel" required minlength="50" maxlength="500"><br><br>
+
+    <div *ngIf="f_price.errors?.['required'] && f_price.touched">Please Enter price</div>
+    <div *ngIf="f_price.errors?.['minlength'] && f_price.touched">Please Enter Atleast 5 characters</div>
+  Food Price:<input type="text" ngModel name="f_price" #f_price="ngModel" required minlength="3" maxlength="30"><br><br>
+
+  <div *ngIf="f_desc.errors?.['required'] && f_desc.touched">Please Enter description</div>
+  <div *ngIf="f_desc.errors?.['minlength'] && f_desc.touched">Please Enter Atleast 6 characters</div>
+Food Description:<input type="text" ngModel name="f_desc" #f_desc="ngModel" required minlength="6" maxlength="15"><br><br>
+       
+<div *ngIf="fc_id.errors?.['required'] && fc_id.touched">Please Enter food category id</div>
+<div *ngIf="fc_id.errors?.['minlength'] && fc_id.touched">Please Enter Atleast 3 value</div>
+Food Category Id:<input type="text" ngModel name="fc_id" #fc_id="ngModel" required minlength="3" maxlength="5"><br><br>
+
+        <button type="submit" [disabled]="regForm.invalid">Update</button>
+  </form>
+</div> -->

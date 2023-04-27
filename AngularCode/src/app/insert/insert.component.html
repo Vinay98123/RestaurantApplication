@@ -1,0 +1,30 @@
+<div class="container">
+  
+    <form #insertForm="ngForm" (ngSubmit)="insert(insertForm.value)" novalidate>
+      <h2>INSERT FORM</h2><br>
+        <div *ngIf="f_name.errors?.['required'] && f_name.touched">Please Enter Food Name</div>
+        <div *ngIf="f_name.errors?.['minlength'] && f_name.touched">Please Enter Atleast 5 characters</div>
+      Food Name:<input type="text" ngModel name="f_name" #f_name="ngModel" required minlength="5" maxlength="30"><br><br>
+         
+      <div *ngIf="f_img.errors?.['required'] && f_img.touched">Please Enter picture</div>
+      <div *ngIf="f_img.errors?.['minlength'] && f_img.touched">Please Enter Image URL</div>
+    Food Picture:<input type="text" ngModel name="f_img" #f_img="ngModel" required minlength="10 " maxlength="500"><br><br>
+
+    <div *ngIf="f_price.errors?.['required'] && f_price.touched">Please Enter price</div>
+    <div *ngIf="f_price.errors?.['minlength'] && f_price.touched">Please Enter Atleast 2 values</div>
+  Food Price:<input type="text" ngModel name="f_price" #f_price="ngModel" required minlength="2" maxlength="30"><br><br>
+
+  <div *ngIf="f_desc.errors?.['required'] && f_desc.touched">Please Enter description</div>
+  <div *ngIf="f_desc.errors?.['minlength'] && f_desc.touched">Please Enter Description</div>
+Food Description:<input type="text" ngModel name="f_desc" #f_desc="ngModel" required minlength="1" maxlength="5000"><br><br>
+      <label> Enter 101 for Veg Category</label><br> 
+      <label> Enter 102 for Non-Veg Category</label><br> 
+      <label> Enter 103 for Deserts Category</label> <br>
+<div *ngIf="fc_id.errors?.['required'] && fc_id.touched">Please Enter food category id</div>
+<div *ngIf="fc_id.errors?.['minlength'] && fc_id.touched">Please Enter Atleast 3 value</div>
+Food Category Id:<input type="text" ngModel name="fc_id" #fc_id="ngModel" required minlength="3" maxlength="5"><br><br>
+
+        <button type="submit" [disabled]="insertForm.invalid">Insert</button>
+  </form>
+</div>
+<div><img [src]="myimage" alt="img not found" width="100%" height="760px"></div>

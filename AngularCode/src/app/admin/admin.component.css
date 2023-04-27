@@ -1,0 +1,38 @@
+div{
+    background-repeat:no-repeat ;
+     
+}
+.buttons{
+    text-align:center;
+    margin: 0;
+    padding:20px;
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    top: 0%; 
+    right: -10%;
+    bottom: 10%;
+    size: 10ch;
+}
+.bt {
+    text-align:center;
+    margin: 0;
+    padding:20px;
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    left: -11%;
+    
+}
+.bt2 {
+    text-align:center;
+    margin: 0;
+    padding:20px;
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    left: 0%;  
+}
+.btn--block{
+    width: 60%;
+}

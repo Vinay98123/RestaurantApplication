@@ -1,0 +1,62 @@
+<router-outlet></router-outlet>
+<header> 
+  <div class="navbar navbar-dark bg-secondary shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">
+          <i style="font-size: 30px;" class="fa fa-cutlery">&nbsp;
+              
+          </i>
+          <strong style="font-size: 30px;color: rgb(255, 255, 255);">Paradise</strong>
+          
+
+              <div>
+              <form #value="ngForm" (ngSubmit)="search(value.value)">
+                <div class="search">
+                <input type="text" placeholder="Search by item name" ngModel name="search" #name="ngModel">
+             
+                <button type="submit" class="fas fa-search search-icon" style="height: 28px;"></button></div>
+            </form>
+        </div>
+      </div>
+      <button routerLink="user/cart" class="btn btn-Primary">
+          <i  routerLink="cart"style="font-size: 30px;" class="fas fa-cart-plus"></i>
+          
+          <div style="font-size: 10px;" class="badge bg-warning">{{totalItem}}</div>
+      </button>
+      <button routerLink="" class="btn btn-danger">LOG OUT</button>
+  </div>
+
+</header>
+ <div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+        <button id="allbutton" (click)=reload()><b>All Items</b><img src="https://www.bitesbee.com/wp-content/uploads/2021/09/banner-3.jpg"width="30px"height="30px" alt="img not found">
+        </button> 
+    </div>
+
+          <div class="item">
+            <button id="allbutton" (click)=searchh(101)><b>Veg</b><img src="https://c.ndtvimg.com/2020-09/if4pp5j8_vegetarian_625x300_30_September_20.jpg" alt="img not found" width="30px"height="30px"></button>
+        </div>
+        <div class="item">
+            <button id="allbutton" (click)=searchh(102)><b>Non Veg</b><img src="https://cdn.shpy.in/242851/1659631728030_SKU-0011_0.jpg?" alt="img not found" width="30px"height="30px"></button>
+        </div>
+        <div class="item">
+            <button id="allbutton" (click)=searchh(103)><b>Deserts</b><img src="https://cdn.hswstatic.com/gif/desserts-update.jpg " alt="img not found" width="30px"height="30px"></button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      
+            <ng-container *ngFor="let item of foodList">    
+            <div class="card col-md-3" style="background-color: azure">
+                <img src="{{item.f_img}}" alt="item.f_name">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.f_name}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.f_desc}}</p>
+                <p><strong>Price:</strong> Rs.{{item.f_price}}</p>
+                <button class="btn btn-secondary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+      
+</ng-container>
+    </div>
+</div>

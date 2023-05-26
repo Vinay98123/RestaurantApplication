@@ -15,7 +15,7 @@
  -->
 
  <div class="container">
-    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" nonvalidate>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" nonvalidate class="form">
       <h2 align="center">LOGIN FORM </h2><br><br>
       <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" ngModel name="un" placeholder="name@example.com">
@@ -24,8 +24,15 @@
       </div>
       <div class="form-floating">
         <input type="password" class="form-control" id="floatingPassword" ngModel name="pwd" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <label for="floatingPassword">Password</label><br><br>
+        <form [formGroup]="aFormGroup" required>
+          <ngx-recaptcha2 #captchaElem
+            [siteKey]="siteKey"
+            formControlName="recaptcha" [(ngModel)]="captchaResponse" >
+          </ngx-recaptcha2>
+        </form>
       </div><br><br>
+      
       <div>
         <button type="submit" class="btn btn-outline-primary">SignIn</button>
         <button type="SignUp" [routerLink]="'reg'" class="btn btn-outline-dark">SignUp</button>

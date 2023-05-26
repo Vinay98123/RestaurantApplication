@@ -11,7 +11,7 @@ import { RestaurantComponent } from './adminaccess/restaurant.component';
 import { UserComponent } from './user/user.component';
 import { CartComponent } from './cart/cart.component';
 import { RegComponent } from './reg/reg.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgToastModule } from 'ng-angular-popup';
 import { UpdateComponent } from './update/update.component';
 import { HomeComponent } from './home/home.component';
@@ -19,6 +19,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 
 import { EncrDecrSeviceService } from './encr-decr-sevice.service';
 import { TotalPipe } from './total.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 
@@ -55,6 +57,7 @@ import { TotalPipe } from './total.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     NgToastModule,
+    NgxCaptchaModule
   
   ],
   providers: [EncrDecrSeviceService],

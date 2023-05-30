@@ -16,8 +16,8 @@
     word-wrap: break-word;
     background: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: .25rem;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    /* border-radius: .25rem; */
 }
 
 .item img {
@@ -34,12 +34,12 @@
 }
 
 .card {
-    padding: 20px;
-    margin: 50px;
+    padding: 10px;
+    margin: 40px;
 }
 
 .card img {
-    width: 200px;
+    width: 250px;
     height: 200px;
     margin-bottom: 15px;
     transition: 0.3s ease-in-out;
@@ -53,7 +53,7 @@
     background-color:rgba(45, 44, 44, 0.493) ;
 }
 .search{
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     color: rgb(11, 11, 83);
 }
     #allbutton{

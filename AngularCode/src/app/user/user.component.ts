@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   // searchKey:string ="";
   // public searchTerm : string=' ';
   public totalItem:number=0;
+  location: any;
   // public filterCategory : any;
   constructor(private rs: RestaurantService,private userservice:UserService,private router:Router,private route:ActivatedRoute) { }
 
@@ -29,6 +30,10 @@ export class UserComponent implements OnInit {
     this.userservice.getCount(this.thisUser.u_id).subscribe((data:any)=>{
       this.totalItem=data;
     })
+
+    this.userservice.getLocation().subscribe(response => {
+      this.location = response;
+    });
   }
   addtocart(item:any){
     console.log(item);

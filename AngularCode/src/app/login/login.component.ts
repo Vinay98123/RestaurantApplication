@@ -4,6 +4,7 @@ import { NgToastService } from 'ng-angular-popup';
 import Swal from 'sweetalert2';
 import { RestaurantService } from '../restaurant.service';
 import { EncrDecrSeviceService} from '../encr-decr-sevice.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,18 +13,26 @@ import { EncrDecrSeviceService} from '../encr-decr-sevice.service';
 })
 export class LoginComponent implements OnInit {
 myimage:string="assets/Images/Restaurant.jpg"
+
   
   signin:  any;
+  protected aFormGroup:any;
+  captchaResponse:any;
   
-  constructor(private route:Router, private rs:RestaurantService, private toast: NgToastService,private EncrDecr:EncrDecrSeviceService) { }
+  constructor(private route:Router, private rs:RestaurantService, private toast: NgToastService,private EncrDecr:EncrDecrSeviceService,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.rs.getAllUserData().subscribe((data: any) => {  
       this.signin = data;
       console.log(data)
     });
+
+    this.aFormGroup = this.formBuilder.group({
+      recaptcha: ['', Validators.required]
+    });
    
   }
+  siteKey:string="6LdD2jImAAAAAOUUy7sslj6gsw4uDnpWse8uL9Il";
   login(loginForm: any) {
     console.log(loginForm)
     let i = 0;

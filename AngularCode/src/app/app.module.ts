@@ -16,7 +16,7 @@ import { NgToastModule } from 'ng-angular-popup';
 import { UpdateComponent } from './update/update.component';
 import { HomeComponent } from './home/home.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-
+import { NgxCaptchaModule } from 'ngx-captcha';
 import { EncrDecrSeviceService } from './encr-decr-sevice.service';
 import { TotalPipe } from './total.pipe';
 
@@ -55,6 +55,7 @@ import { TotalPipe } from './total.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     NgToastModule,
+    NgxCaptchaModule
   
   ],
   providers: [EncrDecrSeviceService],

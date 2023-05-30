@@ -38,7 +38,7 @@ ngOnInit(): void {
     "description": "Test Transaction",
     "image": "/",
     "order_id": "", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    "callback_url": "https://goodluckhours.com/payment-successful/",
+    "callback_url": "http://localhost:4200",
     "prefill": {
         "name": "Rajor Pay",
         "email": "payment@rp.com",

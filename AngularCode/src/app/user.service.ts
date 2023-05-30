@@ -14,6 +14,11 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) {
 
+
+  }
+
+  getLocation(){
+    return this.httpClient.get('https://ipapi.co/json/');
   }
 
   getFoods(u_id:any) {

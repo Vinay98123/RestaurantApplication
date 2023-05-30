@@ -37,7 +37,8 @@ export class CartComponent implements OnInit {
     this.ngOnInit();
   }
   emptycart(){
-    this.userservice.removeAllCart();
+   // this.userservice.removeAllCart();
+    this.orders=[];
   }
   qtyupdate(f:any){
 this.rs.updateCart(f).subscribe((data:any)=>{

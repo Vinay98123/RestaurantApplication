@@ -23,6 +23,7 @@
     "bootstrap": "^5.2.3",
     "crypto-js": "^4.1.1",
     "ng-angular-popup": "^0.2.0",
+    "ngx-captcha": "^12.0.2",
     "ngx-toastr": "^16.0.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.14",

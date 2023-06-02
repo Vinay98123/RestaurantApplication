@@ -16,7 +16,9 @@ myimage:string="assets/Images/Restaurant.jpg"
 
   
   signin:  any;
+
   protected aFormGroup:any;
+
   captchaResponse:any;
   
   constructor(private route:Router, private rs:RestaurantService, private toast: NgToastService,private EncrDecr:EncrDecrSeviceService,private formBuilder: FormBuilder) { }
@@ -33,6 +35,7 @@ myimage:string="assets/Images/Restaurant.jpg"
    
   }
   siteKey:string="6LdD2jImAAAAAOUUy7sslj6gsw4uDnpWse8uL9Il";
+
   login(loginForm: any) {
     console.log(loginForm)
     let i = 0;

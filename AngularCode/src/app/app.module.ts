@@ -20,7 +20,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { EncrDecrSeviceService } from './encr-decr-sevice.service';
 import { TotalPipe } from './total.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxCaptchaModule } from 'ngx-captcha';
+
 
 
 

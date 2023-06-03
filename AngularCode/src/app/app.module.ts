@@ -20,11 +20,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { EncrDecrSeviceService } from './encr-decr-sevice.service';
 import { TotalPipe } from './total.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
-
-
-
+import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -38,15 +34,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserComponent,
     CartComponent,
     RegComponent,
- 
     HomeComponent,
     CheckoutComponent,
-
     TotalPipe,
-
-  
- 
- 
   ],
  
 
@@ -57,10 +47,35 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     NgToastModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule,
   
   ],
-  providers: [EncrDecrSeviceService],
+  providers:  [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '981690278553-lfkohpvvlhkk09cc426ljef70d03ub7q.apps.googleusercontent.com'
+            )
+          },
+
+          
+          
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    },
+    
+  ],
+  //[EncrDecrSeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,36 +24,43 @@ UserType:
   <div><img [src]="myimage" alt="img not found" width="100%" height="760px"></div>
    -->
 
+<header class="site-header">
+  <!-- <img [src]="myimage" alt="img not found" width="300px" height="100px" style="margin-left: 30px;"> -->
+  <div class="site-identity">
+    <img src="/assets/Images/flc_design20230523151855.png" width="90%" height="100px" style="margin-left: 30px;">
+  </div>
+</header>
 
 
-
-    <section class="h-100 gradient-form" style="background-color:mintcream;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-xl-10">
-          <div class="card rounded-3 text-black">
-            <div class="row g-0">
-              <div class="col-lg-6">
-                <div class="card-body p-md-5 mx-md-4">
-                  <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)" novalidate>
-                    <div class="form-group">
+<section class="h-100 gradient-form" style="background-color:mintcream;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)" novalidate>
+                  <div class="form-group">
                     <h1 class="mt-1 mb-5 pb-1"></h1>
-           
+
                     <div class="form-outline mb-4">
                       <label class="form-label">Username</label>
-                      <input type="text" class="form-control" placeholder="Enter username" name="u_name" ngModel pattern="" #u_name=ngModel required style="width:40%">
+                      <input type="text" class="form-control" placeholder="Enter username" name="u_name" ngModel
+                        pattern="" #u_name=ngModel required style="width:40%">
 
                       <div *ngIf="u_name.errors?.['required'] && u_name.touched">This field is required</div>
-                      
+
                     </div>
                     <div class="form-outline mb-4">
                       <label for="u_email">Email: </label>
-                <input type="u_email"  class="form-control" placeholder="Enter email" name="u_email" ngModel   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #u_email ="ngModel"
-            
-                [class.is-invalid]= "u_email.invalid && u_email.touched " style="width: 40%;">
-            
-                <div *ngIf="u_email.errors && (u_email.dirty && u_email.touched)" class="alert-u_email alert-danger-u_email"><br>
-            
+                      <input type="u_email" class="form-control" placeholder="Enter email" name="u_email" ngModel
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #u_email="ngModel"
+                        [class.is-invalid]="u_email.invalid && u_email.touched " style="width: 40%;">
+
+                      <div *ngIf="u_email.errors && (u_email.dirty && u_email.touched)"
+                        class="alert-u_email alert-danger-u_email"><br>
+
                         <div [hidden]="!u_email.errors['pattern']">
                           Please Enter Valid Email
                         </div>
@@ -64,67 +71,69 @@ UserType:
                     </div>
                     <div class="form-outline mb-4">
                       <label for="u_pass">Password</label>
-                      <input type="password"  class="form-control" placeholder="Enter Password" name="u_pass" ngModel   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}" required #u_pass ="ngModel"
-                  
-                      [class.is-invalid]= "u_pass.invalid && u_pass.touched" style="width: 40%;" >
-                  
-                      <div *ngIf="u_pass.errors && (u_pass.dirty && u_pass.touched)" class="alert-u_pass alert-danger-u_pass" ><br>
-                  
-                              <div [hidden]="!u_pass.errors['pattern']">
-                              
-                                Password is Too Weak. <br><br>
-                                At least 8 characters in length<br><br>
-                                At least Lowercase letter<br><br>
-                                At least Uppercase letter<br><br>
-                                At least Number<br><br>
-                                At least Special character<br><br>
-                              </div>
-                              <div [hidden]="!u_pass.errors['required']">
-                              Password is must required
-                              </div>
-                            </div>
-                
+                      <input type="password" class="form-control" placeholder="Enter Password" name="u_pass" ngModel
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}" required
+                        #u_pass="ngModel" [class.is-invalid]="u_pass.invalid && u_pass.touched" style="width: 40%;">
+
+                      <div *ngIf="u_pass.errors && (u_pass.dirty && u_pass.touched)"
+                        class="alert-u_pass alert-danger-u_pass"><br>
+
+                        <div [hidden]="!u_pass.errors['pattern']">
+
+                          Password is Too Weak. <br><br>
+                          At least 8 characters in length<br><br>
+                          At least Lowercase letter<br><br>
+                          At least Uppercase letter<br><br>
+                          At least Number<br><br>
+                          At least Special character<br><br>
+                        </div>
+                        <div [hidden]="!u_pass.errors['required']">
+                          Password is must required
+                        </div>
+                      </div>
+
                     </div>
-                  
+
                     <div class="form-outline mb-4">
                       <label for="u_phno">Phone Number </label>
-                      <input type="u_phno"  class="form-control" placeholder="Enter Phone Number" name="u_phno" ngModel   pattern="^((\\+91-?)|0)?[0-9]{10}$" required #u_phno ="ngModel"
-                  
-                      [class.is-invalid]= "u_phno.invalid && u_phno.touched " style="width: 40%;" >
-                  
-                      <div *ngIf="u_phno.errors && (u_phno.dirty && u_phno.touched)" class="alert-u_phno alert-danger-u_phno" ><br>
-                  
-                              <div [hidden]="!u_phno.errors['pattern']">
-                                Please Enter Valid Phone Number.
-                              </div>
-                              <div [hidden]="!u_phno.errors['required']">
-                              Phone Number is must required
-                              </div>
-                            </div>
+                      <input type="u_phno" class="form-control" placeholder="Enter Phone Number" name="u_phno" ngModel
+                        pattern="^((\\+91-?)|0)?[0-9]{10}$" required #u_phno="ngModel"
+                        [class.is-invalid]="u_phno.invalid && u_phno.touched " style="width: 40%;">
+
+                      <div *ngIf="u_phno.errors && (u_phno.dirty && u_phno.touched)"
+                        class="alert-u_phno alert-danger-u_phno"><br>
+
+                        <div [hidden]="!u_phno.errors['pattern']">
+                          Please Enter Valid Phone Number.
+                        </div>
+                        <div [hidden]="!u_phno.errors['required']">
+                          Phone Number is must required
+                        </div>
+                      </div>
                     </div><br><br>
-               
+
                     <!-- <input type="radio" name="u_type" ngModel value="Admin" #u_type="ngModel" >Admin -->
-                    <div class="text-center pt-1 mb-5 pb-1"style="font: 1em sans-serif;">
-                      <button  class="btn btn-success btn-block fa-lg gradient-custom-2 mb-3"style="color:white; width: 40%;" [disabled]="!registerForm.valid">Register</button>
-                  
+                    <div class="text-center pt-1 mb-5 pb-1" style="font: 1em sans-serif;">
+                      <button class="btn btn-success btn-block fa-lg gradient-custom-2 mb-3"
+                        style="color:white; width: 40%;" [disabled]="!registerForm.valid">Register</button>
+
                     </div>
-                    </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
               </div>
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                  <h2 class="mb-4" style="color: rgb(94, 57, 57) ;"><i>Welcome To DIME </i></h2>
-                  <p class="large mb-0"style="color: rgb(94, 57, 57) ;">Register here and enjoy Your Orders : )
-                  </p>
-                  <img [src]="myimage" alt="img not found" width="100%" height="50%"> 
-                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h2 class="mb-4" style="color: rgb(94, 57, 57) ;"><i>Welcome To DIME </i></h2>
+                <p class="large mb-0" style="color: rgb(94, 57, 57) ;">Register here and enjoy Your Orders : )
+                </p>
+                <img [src]="myimage" alt="img not found" width="100%" height="50%">
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>

@@ -20,7 +20,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { EncrDecrSeviceService } from './encr-decr-sevice.service';
 import { TotalPipe } from './total.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
-import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -64,6 +64,10 @@ import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig,
               '981690278553-lfkohpvvlhkk09cc426ljef70d03ub7q.apps.googleusercontent.com'
             )
           },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('720542903162742')
+          }
 
           
           

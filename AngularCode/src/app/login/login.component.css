@@ -1,24 +1,44 @@
-.form{
-    text-align:center;
-    margin: 0;
-    padding:20px;
+.form {
+    text-align: center;
+    margin: 100px 300px;
+    padding: 20px;
     height: 400px;
-    width: 500px;
-    position: absolute;
+    width: 350px;
+    position: relative;
     top: 30%;
-    left:35%;
-  align-items: center;
-  background-color: rgba(169, 169, 169, 0.584);
-    color:darkred;
+    left: 35%;
+    align-items: center;
+    background-color: rgba(169, 169, 169, 0.584);
+    color: darkred;
     border-style: double;
-   font-weight: bold;
+    font-weight: bold;
+
 }
-a{
+
+a {
     color: blue;
 }
-h6{
+
+h6 {
     color: darkmagenta;
 }
-div{
+
+div {
     text-align: center;
+}
+
+header {
+    background-color: cadetblue;
+    color: #000;
+}
+
+.site-header {
+    border-bottom: 1px solid rgba(204, 204, 204, 0);
+    padding: .5em 1em;
+    display: flex;
+    justify-content: space-between;
+}
+body{
+    background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
+    background-repeat: no-repeat;
 }

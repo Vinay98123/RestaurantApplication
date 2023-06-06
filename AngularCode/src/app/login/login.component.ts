@@ -4,9 +4,9 @@ import { NgToastService } from 'ng-angular-popup';
 import Swal from 'sweetalert2';
 import { RestaurantService } from '../restaurant.service';
 import { EncrDecrSeviceService} from '../encr-decr-sevice.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { GoogleInitOptions, GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
+import { FacebookLoginProvider, GoogleInitOptions, GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ import { GoogleInitOptions, GoogleLoginProvider, SocialAuthService } from '@abac
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-myimage:string="assets/Images/Restaurant.jpg"
+myimage:string="assets/Images/flc_design20230523151855.png"
 
   
   signin:  any;
@@ -25,6 +25,9 @@ myimage:string="assets/Images/Restaurant.jpg"
   user: any;
   private accessToken = '';
   loggedIn: boolean = this.rs.getGoogleLoginStatus();
+  loginForm!: FormGroup;
+  socialUser!: SocialUser;
+  isLoggedin?: boolean = undefined;
   
   constructor(private route:Router, private rs:RestaurantService, private toast: NgToastService,private EncrDecr:EncrDecrSeviceService,private formBuilder: FormBuilder,private httpClient: HttpClient,private authService: SocialAuthService) { }
 
@@ -40,6 +43,14 @@ myimage:string="assets/Images/Restaurant.jpg"
 
   refreshToken(): void {
     this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+  
+  loginWithFacebook(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
   ngOnInit(): void {
     this.rs.getAllUserData().subscribe((data: any) => {  

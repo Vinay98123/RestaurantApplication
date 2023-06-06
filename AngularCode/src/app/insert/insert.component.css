@@ -1,17 +1,28 @@
-form{
-    text-align:center;
-    margin: 0;
-    padding:20px;
-    height: 480px;
-    width: 500px;
-    position: absolute;
-    top: 30%;
-    left:35%;
+form {
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  height: 480px;
+  width: 500px;
+  position: absolute;
+  top: 30%;
+  left: 35%;
   align-items: center;
   background-color: rgba(169, 169, 169, 0.845);
-    color:rgb(44, 17, 91);
-    border-style: double;
-   font-weight: bold;
-   font-size: medium;
-   font-style: italic;
+  color: rgb(44, 17, 91);
+  border-style: double;
+  font-weight: bold;
+  font-size: medium;
+  font-style: italic;
+}
+header {
+  background-color: cadetblue;
+  color: #000;
+}
+
+.site-header {
+  border-bottom: 1px solid rgba(204, 204, 204, 0);
+  padding: .5em 1em;
+  display: flex;
+  justify-content: space-between;
 }

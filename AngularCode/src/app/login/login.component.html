@@ -1,4 +1,4 @@
-   <!-- <form #loginForm ="ngForm" (ngSubmit)="login(loginForm.value)">
+<!-- <form #loginForm ="ngForm" (ngSubmit)="login(loginForm.value)">
     <h2>LOGIN FORM </h2><br>
     <div *ngIf="un.errors?.['required'] && un.touched">Please Enter Username</div>
     <div *ngIf="un.errors?.['minlength'] && un.touched">Please Enter Atleast 10 values</div>
@@ -13,35 +13,48 @@
   <div><a routerLink="/reg">Resister Now</a></div>
 </form>
  -->
+<header class="site-header">
+  <!-- <img [src]="myimage" alt="img not found" width="300px" height="100px" style="margin-left: 30px;"> -->
+  <div class="site-identity">
+    <img src="/assets/Images/flc_design20230523151855.png" width="90%" height="100px" style="margin-left: 30px;">
+  </div>
+</header>
 
- <div class="container">
+<body>
+
+
+  <div class="container">
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" nonvalidate class="form">
-      <h2 align="center">LOGIN FORM </h2><br><br>
+      <h2 align="center"></h2><br><br>
       <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" ngModel name="un" placeholder="name@example.com">
-        
+
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating">
         <input type="password" class="form-control" id="floatingPassword" ngModel name="pwd" placeholder="Password">
         <label for="floatingPassword">Password</label><br><br>
         <form [formGroup]="aFormGroup" required>
-          <ngx-recaptcha2 #captchaElem
-            [siteKey]="siteKey"
-            formControlName="recaptcha" [(ngModel)]="captchaResponse" >
+          <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha" [(ngModel)]="captchaResponse">
           </ngx-recaptcha2>
         </form>
-      </div><br><br>
-      <asl-google-signin-button type='standard' size='medium'></asl-google-signin-button>
+      </div><br>
+
       <div>
-        <button type="submit" class="btn btn-outline-primary">SignIn</button>
-        <button type="SignUp" [routerLink]="'reg'" class="btn btn-outline-dark">SignUp</button>
+        <button type="submit" class="btn btn-outline-primary btn-lg">SignIn</button>&nbsp;&nbsp;&nbsp;
+        <button type="SignUp" [routerLink]="'reg'" class="btn btn-outline-dark btn-lg">SignUp</button><br><br>
+        <asl-google-signin-button type='standard' size='medium'></asl-google-signin-button><br>
+        <div *ngIf="!isLoggedin">
+
+          <button type="button" (click)="loginWithFacebook()" class="btn btn-primary btn-block" style="width: auto;">Signin with Facebook</button>
+        </div>
       </div><br><br>
 
-      
+
     </form>
+
   </div>
-  
-  <div >
-    <img [src]="myimage" alt="img not found" width="100%" height="760px">
-  </div>
+</body>
+<!-- <div >
+  <img src="https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png" alt="img not found" width="100%" height="760px">
+</div> -->

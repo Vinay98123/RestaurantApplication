@@ -2,41 +2,43 @@
 <header>
     <div class="navbar navbar-dark bg-secondary shadow-sm">
         <!-- <div class="navbar-brand align-item-center d-flex"> -->
-            <!-- <i style="font-size: 30px;" class="fa fa-cutlery">&nbsp;
+        <!-- <i style="font-size: 30px;" class="fa fa-cutlery">&nbsp;
 
             </i>
             <strong style="font-size: 30px;color: rgb(255, 255, 255);">DIME</strong> -->
 
-            <img src="/assets/Images/DIME.jpg" width="100px" height="100px" style="margin-left: 10px;" class="rounded-circle">
-            <!-- <h1><b class="name">DIME</b></h1> -->
-
-            <div>
-                <form #value="ngForm" (ngSubmit)="search(value.value)">
-                    <div class="search" style="padding-left: 20px;">
-                        <input type="text" placeholder="Search by item name" ngModel name="search" #name="ngModel">
-
-                        <button type="submit" class="fas fa-search search-icon" style="height: 28px;"></button>
-                    </div>
-                </form>
-            </div>
+            <img src="/assets/Images/flc_design20230523151855.png" width="200px" height="100px" style="margin-left: 30px;">
             
+        <!-- <h1><b class="name">DIME</b></h1> -->
+
+        <div>
+            <form #value="ngForm" (ngSubmit)="search(value.value)">
+                <div class="search" style="padding-left: 20px;">
+                    <input type="text" placeholder="Search by item name" ngModel name="search" #name="ngModel">
+
+                    <button type="submit" class="fas fa-search search-icon" style="height: 28px;"></button>
+                </div>
+            </form>
+        </div>
+
         <!-- </div> -->
         <button routerLink="user/cart" class="btn btn-Primary">
             <i routerLink="cart" style="font-size: 30px;" class="fas fa-cart-plus"></i>
 
             <div style="font-size: 10px;" class="badge bg-warning">{{totalItem}}</div>
         </button>
-        <button routerLink="" class="btn btn-danger">LOG OUT</button>
+        <button routerLink="" class="btn btn-danger btn-lg">LOG OUT</button>
     </div>
 
     <img src="https://img.freepik.com/premium-vector/red-pin-point-location-symbol-isolated-white-background_120819-396.jpg"
         alt="" height="50px" width="50px" style="margin-left: 20px;">
 
     <div style="padding-left:20px; padding-bottom: 0px;font-weight: bolder;">
-       <h4>{{ location?.city }}, {{ location?.region }}, {{ location?.country_name }}</h4> 
+        <h4>{{ location?.city }}, {{ location?.region }}, {{ location?.country_name }}</h4>
     </div><br><br><br>
 
 </header>
+
 <div class="card-top container-fluid">
     <div class="container d-flex">
         <div class="item">
@@ -81,3 +83,8 @@
         </ng-container>
     </div>
 </div>
+
+<!-- <div>
+    <h4>{{ userdetails.name }}</h4>
+    <p>{{ userdetails.email }}</p>
+</div> -->

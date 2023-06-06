@@ -20,11 +20,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { EncrDecrSeviceService } from './encr-decr-sevice.service';
 import { TotalPipe } from './total.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxCaptchaModule } from 'ngx-captcha';
-
-
-
-
+import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -38,15 +34,9 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     UserComponent,
     CartComponent,
     RegComponent,
- 
     HomeComponent,
     CheckoutComponent,
-
     TotalPipe,
-
-  
- 
- 
   ],
  
 
@@ -57,10 +47,39 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     ReactiveFormsModule,
     HttpClientModule,
     NgToastModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule,
   
   ],
-  providers: [EncrDecrSeviceService],
+  providers:  [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '981690278553-lfkohpvvlhkk09cc426ljef70d03ub7q.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('720542903162742')
+          }
+
+          
+          
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    },
+    
+  ],
+  //[EncrDecrSeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

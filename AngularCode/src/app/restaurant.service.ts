@@ -9,12 +9,12 @@ function _window():any{
 })
 export class RestaurantService {
   userDetails: any;
- 
-
   loggedIn: boolean;
   cart: any;
+  googleloginStatus:boolean;
   constructor(private httpClient: HttpClient) {
     this.loggedIn = false;
+    this.googleloginStatus=false;
     this.cart = {
       o_id: 0,
       f_id: "",
@@ -24,6 +24,13 @@ export class RestaurantService {
       f_img: "",
       f_price: ""
     }
+  }
+  getGoogleLoginStatus():boolean{
+    return this.googleloginStatus;
+  }
+  setGoogleLoginStatusIn()
+  {
+    this.googleloginStatus = true;
   }
   setloggedIn() {
     this.loggedIn = true;
